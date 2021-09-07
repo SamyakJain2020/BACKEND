@@ -1,0 +1,274 @@
+#INSALL REDIS
+##Windows:
+    1.Enable WSL from "Turn Windows features on or off settings"
+    2.Restart the machine
+    3.Install Ubuntu20.04 from Windows Store
+    4.Open Ubuntu and setup name and password
+    5.Run the following commands:
+        sudo apt-get upgrade
+        sudo apt-get install redis-server
+        sudo service redis-server restart
+        redis-cli (to enter into redis)
+##Linux:
+    1.Run the following commands:
+        sudo apt-get upgrade
+        sudo apt-get install redis-server
+        sudo service redis-server restart
+        redis-cli
+--------------------------------------------------------
+#USAGE
+FOR STRINGS:
+    SET key value               -> create a key
+    GET key                     -> key the valuse of a key
+    ttl key                     (time to live of a key) 
+    KEYS *                      -> To list all the keys
+    DEL key                     -> delete a key 
+    FLUSHALL                    (delete all keys) -> delete  
+    EXISTS key                  (check if key exists)
+    expire key time             (set time to live)
+    setex key time value        (set time to live and value)
+
+For Arrays:
+    LPUSH array value           -> Push a value at the starting of the array
+    RPUSH array value           -> Push a value at the ending of the array
+    LRANGE array start stop     -> print the array 
+    LPOP array                  -> pop a value at the starting of the array
+    RPOP array                  -> pop a value at the ending of the array
+
+For SETS:
+    SADD setname value          -> add value in a set 
+    SMEMBERS myset              -> get all members
+    SREM myset value            -> remove a value in a set
+
+For Objects/Hash:
+    HSET key(string/hash/array) field value -> (enter a key and value in a object)
+    HGET key field              -> get a particular value of a key in a boject
+    HGETALL key                 ->prints all the keys and 
+    HDEL key field              ->delets a key and value in a object
+    HEXISTS key field           ->check if a key exists or not
+
+example:
+{
+    "name":"samyak"
+    person{
+        "name":"samayk jian"
+    }
+}
+HSET  person name "samyak jain"
+HGET person name
+
+-----------------------------------------------------------
+
+#POSTGRES INSTALLATION
+##For Windows(WSL)
+Run the commands:
+    sudo apt update
+    sudo apt install postgresql postgresql-contrib
+    sudo -i -u postgres
+    psql
+##For linux
+Run the commands:
+    sudo -u postgres psql
+    psql
+
+---------------------------------------------------------
+SQL BASICS:
+
+Database - is a collection of tables
+Postgres works on user.
+Postgres is a database.
+It's case sensitive.
+
+
+Collection of Tables is Database.
+POSTGRESQL is a Database.
+
+# GRANT ALL PRIVILEGES ON databaseName TO userName;   (~SELE    CT, INSERT, UPDATE, DELETE)
+# GRANT INSERT PRIVILEGES ON databaseName TO userName;   ( INSERT) ...select,update,delete
+# \l     (list all databases)
+# \d     (list all tables)
+# \c     (connect to database)
+# \q     (quit)
+
+********Commands of PostgresSQL******
+***Start the PostgresSql***
+psql -U postgres  
+
+***Create a user and Password***
+Create user sam with PASSWORD 'password';  
+
+***Create database***
+CREATE DATABASE devs;
+
+***Grant all Privileges on database ***
+GRANT ALL PRIVILEGES ON DATABASE database_Name to user_Name;
+
+***Check the database is Created***
+\l
+
+***Connect to database***
+\c database_Name
+
+***Create Table***
+
+CREATE TABLE COMPANY(
+ID INT NOT NULL,
+NAME CHAR[50],
+AGE INT,
+ADDRESS TEXT
+);
+
+
+***Check The Table is Created***
+\d
+or
+\d table_name
+or 
+SELECT * FROM table_Name;
+
+
+***Delete the Database***
+DROP database_Name;
+
+***Delete the  Table***
+DROP table_Name;
+
+***Quit the psql server***
+\q
+
+***Insert Single Data  into Table***
+
+INSERT INTO table_Name VALUES (1 , 'SAM' , 10 , 'ABCD');
+
+***INSERT Multiple Rows***
+Ex:-
+
+DROP TABLE IF EXISTS links;
+
+CREATE TABLE links (
+    id SERIAL PRIMARY KEY,
+    url VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    description VARCHAR(255)
+);
+
+INSERT INTO 
+    links (url, name)
+VALUES
+    ('https://www.google.com','Google'),
+    ('https://www.yahoo.com','Yahoo'),
+    ('https://www.bing.com','Bing');
+
+    SELECT * FROM links;
+
+***Inserting multiple rows and returning inserted rows***
+
+INSERT INTO 
+    links(url,name, description)
+VALUES
+    ('https://duckduckgo.com/','DuckDuckGo','Privacy & Simplified Search Engine'),
+    ('https://swisscows.com/','Swisscows','Privacy safe WEB-search')
+RETURNING *;
+
+
+***Delete Row form Table***
+DELETE FROM table_name
+WHERE condition(id =1);
+
+Ex:-
+DROP TABLE IF EXISTS links;
+
+CREATE TABLE links (
+    id serial PRIMARY KEY,
+    url varchar(255) NOT NULL,
+    name varchar(255) NOT NULL,
+    description varchar(255),
+    rel varchar(10),
+    last_update date DEFAULT now()
+);
+
+INSERT INTO  links VALUES 
+   ('1', 'https://www.postgresqltutorial.com', 'PostgreSQL Tutorial', 'Learn PostgreSQL fast and easy', 'follow', '2013-06-02'),
+   ('2', 'http://www.oreilly.com', 'O''Reilly Media', 'O''Reilly Media', 'nofollow', '2013-06-02'),
+   ('3', 'http://www.google.com', 'Google', 'Google', 'nofollow', '2013-06-02'),
+   ('4', 'http://www.yahoo.com', 'Yahoo', 'Yahoo', 'nofollow', '2013-06-02'),
+   ('5', 'http://www.bing.com', 'Bing', 'Bing', 'nofollow', '2013-06-02'),
+   ('6', 'http://www.facebook.com', 'Facebook', 'Facebook', 'nofollow', '2013-06-01'),
+   ('7', 'https://www.tumblr.com/', 'Tumblr', 'Tumblr', 'nofollow', '2013-06-02'),
+   ('8', 'http://www.postgresql.org', 'PostgreSQL', 'PostgreSQL', 'nofollow', '2013-06-02');
+
+DELETE FROM links
+WHERE id = 8;
+
+***Delete all Rows from the table***
+DELETE FROM table_Name;
+
+*** Delete a row and Return the Deleted row***
+DELETE FROM table_Name
+WHERE id = 7
+RETURNING *;
+
+***BETWEEN operator***
+
+value(row_name) BETWEEN low AND high;      
+value >= low and value <= high   -it will print all the data.
+value NOT BETWEEN low AND high;  -it will print all the data .
+value < low OR value > high;    
+
+Ex:-
+SELECT
+	customer_id,
+	payment_id,
+	amount
+FROM
+	payment
+WHERE
+	amount BETWEEN 8 AND 9;
+
+
+***Create Auto-increment Column***
+
+CREATE TABLE table_name(
+    id SERIAL
+);
+
+Ex:-
+CREATE TABLE fruits(
+   id SERIAL PRIMARY KEY,
+   name VARCHAR NOT NULL
+);
+
+INSERT INTO fruits(name) 
+VALUES('Orange');
+
+INSERT INTO fruits(id,name) 
+VALUES(DEFAULT,'Apple');
+
+SELECT * FROM fruits;
+
+***inserts a new row into the fruits table and returns the value generated for the id column***
+INSERT INTO fruits(name) 
+VALUES('Banana')
+RETURNING id;
+
+***ADD COLUMN***
+ALTER TABLE table_name
+ADD COLUMN new_column_name data_type constraint;
+
+//constraint means null or not null
+
+Ex:-
+DROP TABLE IF EXISTS customers CASCADE;
+
+CREATE TABLE customers (
+    id SERIAL PRIMARY KEY,
+    customer_name VARCHAR NOT NULL
+);
+
+ALTER TABLE customers 
+ADD COLUMN phone VARCHAR;
+
+ALTER TABLE customers
+ADD COLUMN fax VARCHAR,
+ADD COLUMN email VARCHAR;
+
