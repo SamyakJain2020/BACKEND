@@ -224,15 +224,12 @@ FROM
 	payment
 WHERE
 	amount BETWEEN 8 AND 9;
-
-
+    
 ***Create Auto-increment Column***
 
 CREATE TABLE table_name(
     id SERIAL
-);
-
-Ex:-
+);Ex:-
 CREATE TABLE fruits(
    id SERIAL PRIMARY KEY,
    name VARCHAR NOT NULL
@@ -271,4 +268,4 @@ ADD COLUMN phone VARCHAR;
 ALTER TABLE customers
 ADD COLUMN fax VARCHAR,
 ADD COLUMN email VARCHAR;
-
+    

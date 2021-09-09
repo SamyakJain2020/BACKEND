@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <title>Contact us</title>
+</head>
+<body>
+    <h1 style=" margin: 0; text-decoration-line: underline; color: darkred; text-align: center; background-color: white;" >SANKALP</h1>
+            
+     <div class="navbar">
+        <div class="container">
+            <a href="index.html">
+                <img style="align-self:rigth ;" alt="Qries" src="images/LOGO.jpeg" width=" 150" height="70">
+             </a>
+            
+             
+             <!-- <img id="mobile-cta" class="mobile-view" src="images/menu.svg" alt="Navigation Open"> -->
+             <nav>
+                 <img id="mobile-exit" class="mobile-menu-exit" src="images/exit.svg" alt="">
+                 <ul class="primary-nav">
+                     <li class="primary-nav"><a href="index.html">Home</a> </li>
+                     <li><a href="funds.html">Funds</a> </li>
+                     <li><a href="login.html">Register/Sign in</a> </li>
+                 </ul>
+                 <ul class="secondary-nav">
+                    <li><a href="contact.html">Contact US</a> </li>
+                     <!-- <li><a href="#">Event</a> </li> -->
+                </ul>
+             </nav>
+        </div>
+    </div>
+    
+
+    <section class="contact-section">
+
+        <div class="container">
+                <div class="contact">
+                    <h2 >Contact US</h2>
+                    <form action="">
+                    <label class="lab" for="someInput"> Your Name: </label>
+                    <input class="inp" type="text" id="someInput" name="someInput" placeholder="Name Required">
+                    <!-- <br> -->
+                    <button class="btn"type="submit">Submit</button>
+                    <br><br><br>
+                    <label class="lab" for="email">Email:</label>
+                    <input class="inp" type="email" id="email" name="email"placeholder="Email Required">
+                    <!-- <br> -->
+                    <button class="btn"type="submit">Submit</button>
+                    <br><br><br>
+                    <!-- <label for="message">Message</label> -->
+                    <!-- <input type="message" id="message" name="message"  > -->
+                    <!-- <textarea rows="15" cols="30"></textarea> -->
+                    <!-- <input type="submit" class="send-message" value="send-message"><br> -->
+                    <label class="lab">Anything you want to say?</label>
+                    <br>
+                    <textarea class="inp" rows="10" cols="30" placeholder="Message"></textarea>
+                    <br>
+                    <button class="btn">Submit</button>
+                    </form>
+                </div>
+               <div class="contact">
+                <br><br> 
+                <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+                <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+                <div id='map' style='width: 600px; height: 500px;margin: 0; padding: 0;'></div>
+                <script>
+                  mapboxgl.accessToken = 'pk.eyJ1Ijoic2FteWFramFpbmtpbmciLCJhIjoiY2tseDVvb285MGZhbTJxbHlzbm02bDY5YSJ9.MTKW7nVNVhIoM8vGHXF3tw';
+                  var map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/streets-v11',
+                    zoom: 5
+                  });
+                </script>                            
+                <br>   
+                    <!-- <br><br><br><br><br><br>     -->
+               </div>
+            </div>
+            
+        </div>
+    </section>
+</body>
+</html>

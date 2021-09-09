@@ -1,0 +1,20 @@
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.returning-member {
+    background: #f1f1f1;
+    margin-top: 25px;
+}
+.col-sm-6 {
+    width: 50%;
+}
+#choose_users .row .equal {
+    display: flex;
+    flex-direction: column;
+}
+h2 {
+    color: #a32231!important;
+}
