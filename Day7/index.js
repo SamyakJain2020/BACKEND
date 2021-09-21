@@ -65,8 +65,8 @@ const user=(req,res)=>{
 app.get("/u/:name",user);
 
 
-app.listen(5000,(err)=>{
+app.listen(3000,(err)=>{
     //after it listedns 500 this exectes
-    console.error("err");
+    console.error(`Listening to 3000`);
 });
 // CRUD->POST GET DELETE UPDATE
