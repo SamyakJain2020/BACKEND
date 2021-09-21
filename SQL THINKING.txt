@@ -1,0 +1,16 @@
+ALL SHOWS WE CAN SEE TODAY
+select * from shows where start_time > date and end_time < date +1 day;
+
+
+ALL SHOWS WE CAN SEE TODAY THAT ARE AVILABLE
+
+cout * as bookings_count from bookings group by show_id   
+???
+Select * from shows as s join booking as b  
+???
+
+HOW MANY MOVIES OF SRH. I HAVE SEEN IN LAST MONTH
+
+select count(showid=movie.id) 
+
+LAST 1 YEAR THEATER FREQUENCY
