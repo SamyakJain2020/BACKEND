@@ -6,15 +6,15 @@ const {validateEmail,validatePassword}= require('../Utills/Validations');
 
 const registerInitialChecks=(req,res,next)=>{
     const{email,password,confirmPassword}=req.body;
-    // console.log(email,password,confirmPassword);
+    console.log(email,password,confirmPassword);
     if(typeof(email)==="string" &&
     typeof(password)==="string" &&
     typeof(confirmPassword)==="string" &&
     email.length>0 &&
     password.length>=8 &&
-    confirmPassword===password && 
-    validateEmail(email) &&
-    validatePassword(password)
+    confirmPassword===password 
+    // validateEmail(email) &&
+    // validatePassword(password)
     ){
         next();
     }

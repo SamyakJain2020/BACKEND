@@ -260,7 +260,7 @@ const masterArray = {
   let brachArr=a.map((x)=> x.vehicleBrand);
   const branchSet = new Set(brachArr);
   branchSet.forEach(function(value) {
-    document.getElementById('vehicleBrand').innerHTML+=`<option value='${value}'>${value}</option>`;
+    document.getElementById('vehicleBrand').innerHTML+=`<option value='${value}'>${value}</option>`;  
   });
 
   function Update(th){
