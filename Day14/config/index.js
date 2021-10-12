@@ -1,0 +1,10 @@
+require('dotenv').config();
+module.exports={
+    sequelize_database:process.env.SEQELIZE_DATABASE,
+    sequelize_username:process.env.SEQELIZE_USERNAME,
+    sequelize_password:process.env.SEQELIZE_PASSWORD,
+    sequelize_dialect:process.env.SEQELIZE_DIALECT,
+    sequelize_host:process.env.SEQELIZE_HOST,
+    app_port:process.env.PORT,
+    SECRET:process.env.SECRET
+}
