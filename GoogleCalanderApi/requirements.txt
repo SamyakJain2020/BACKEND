@@ -1,0 +1,25 @@
+##old
+    npx express-generator
+    npm i pg
+    npm i -s mongodb mongoose
+    npm i -s dotenv
+    npm i --save sequelize
+    npm i
+    npm start
+    npm i -s bcrypt
+    npm i -s  express-session redis connect-redis 
+    # add .gitignore
+    # npm i -s jade
+
+##NEW
+npm init -y
+npm i express sequelize pg
+npm i -dev nodemon sequelize-cli
+npm i  bcrypt cookie-parser express-jwt
+npm i jsonwebtoken uuid 
+npm i dotenv ejs cors
+sequelize init
+git add .gitignore
+sequelize model:generate --name User --attributes name:string,email:string
+# configure db settings
+# sequelize db:create
